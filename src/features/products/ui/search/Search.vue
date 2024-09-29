@@ -1,7 +1,7 @@
 <template>
   <div class="bg-white rounded-[50px] w-full max-w-[636px] flex px-4 p-2">
     <Input class="text-base" placeholder="Поиск товара" v-model:value="search" />
-    <Search />
+    <SearchIcon />
   </div>
 </template>
 
@@ -9,7 +9,7 @@
 import { Input, Icon } from '@/shared/ui'
 import { ref, watch } from 'vue'
 import { useProductsStore } from '@/entities/products'
-import Search from '@/shared/assets/icons/Search.vue'
+import { SearchIcon } from '@/shared/assets'
 
 const productStore = useProductsStore()
 
