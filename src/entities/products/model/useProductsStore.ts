@@ -33,11 +33,12 @@ export const useProductsStore = defineStore('productsStore', {
     searchProduct(searchValue: string) {
       const searchData: TSearch = {
         value: searchValue,
-        products: this.allProducts
+        products: this.displayedProducts
       }
 
       if (searchValue.trim() === '') {
-        this.displayedProducts = [...this.allProducts]
+        this.loadIndex = 0
+        this.displayedProducts = [...this.allProducts.slice(0, this.itemsPerLoad)]
       } else {
         this.displayedProducts = getResultProducts(searchData)
       }
