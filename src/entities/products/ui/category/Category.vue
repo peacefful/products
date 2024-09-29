@@ -1,9 +1,9 @@
 <template>
   <div class="category">
     <p class="category-text">Смартфоны и гаджеты</p>
-    <Icon name="arrow-icon" />
+    <ArrowIcon />
     <p class="category-text">Смартфоны</p>
-    <Icon v-if="product" name="arrow-icon" />
+    <ArrowIcon v-if="product" />
     <div class="category" v-if="product">
       <p class="category-text">{{ product }}</p>
     </div>
@@ -11,7 +11,7 @@
 </template>
 
 <script setup lang="ts">
-import { Icon } from '@/shared/ui'
+import { ArrowIcon } from '@/shared/assets'
 
 type TCategory = {
   product: string | undefined

@@ -1,0 +1,1 @@
+export { default as DesktopCloseIcon } from "./DesktopCloseIcon.vue"

@@ -6,12 +6,12 @@
       <div class="flex justify-end">
         <div v-if="windowWidth <= 767">
           <Button @click="modalStore.closeModal" class="bg-white">
-            <Icon name="mobile-close-icon" />
+            <MobileCloseIcon />
           </Button>
         </div>
         <div v-else>
           <Button @click="modalStore.closeModal" class="rounded-[66px]">
-            <Icon name="desktop-close-icon" />
+            <DesktopCloseIcon />
           </Button>
         </div>
       </div>
@@ -28,10 +28,11 @@
 
 <script setup lang="ts">
 import { Modal } from '@/shared/ui'
-import { Icon } from '@/shared/ui'
 import { Button } from '@/shared/ui'
 import { useModalStore } from '@/entities/products'
 import { useWindowWidth } from '@/entities/products'
+import { DesktopCloseIcon } from '@/shared/assets'
+import { MobileCloseIcon } from '@/shared/assets'
 
 const { windowWidth } = useWindowWidth()
 

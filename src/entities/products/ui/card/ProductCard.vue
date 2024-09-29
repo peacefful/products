@@ -5,7 +5,7 @@
     @click="router.push(`/product/${product.id}`)"
   >
     <Button class="h-11 w-11 rounded-full bg-[#5454544D] absolute top-1 right-1">
-      <Icon name="silver-favorite-icon" />
+      <SilverFavoriteIcon />
     </Button>
     <img src="/public/card-phone.png" alt="no image" />
     <p class="mt-3 font-medium text-xs lg:text-sm">{{ product.title }}</p>
@@ -21,7 +21,7 @@
         {{ product.discountPrice }} ₸
       </div>
       <Button class="h-11 bg-default mt-3 w-full lg:w-11 lg:mt-0">
-        <Icon name="basket-icon" />
+        <BasketIcon />
       </Button>
     </div>
   </div>
@@ -33,6 +33,7 @@ import { Icon } from '@/shared/ui'
 import { Button } from '@/shared/ui'
 import { Rating } from '@/entities/products'
 import { useRouter } from 'vue-router'
+import { BasketIcon, SilverFavoriteIcon } from '@/shared/assets'
 
 const router = useRouter()
 

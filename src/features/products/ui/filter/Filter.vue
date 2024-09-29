@@ -29,7 +29,7 @@
       </div>
     </div>
     <Button v-if="windowWidth < 1000">
-      <Icon name="arrow-select-icon" />
+      <ArrowSelectIcon />
     </Button>
     <div
       v-if="isDropdownVisible"
@@ -51,7 +51,7 @@
 
 <script setup lang="ts">
 import { storage } from '@/shared/lib'
-import { Button, Icon } from '@/shared/ui'
+import { Button } from '@/shared/ui'
 import { FILTER_VALUES } from '@/entities/products'
 import { getCurrentTitleFromFilter } from '@/entities/products'
 import { useWindowWidth } from '@/entities/products'
@@ -59,6 +59,7 @@ import { ref, computed } from 'vue'
 import { type TFilter } from '@/entities/products'
 import { watch } from 'vue'
 import { useProductsStore } from '@/entities/products'
+import { ArrowSelectIcon } from '@/shared/assets'
 
 const productsStore = useProductsStore()
 

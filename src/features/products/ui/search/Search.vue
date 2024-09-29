@@ -6,7 +6,7 @@
 </template>
 
 <script setup lang="ts">
-import { Input, Icon } from '@/shared/ui'
+import { Input } from '@/shared/ui'
 import { ref, watch } from 'vue'
 import { useProductsStore } from '@/entities/products'
 import { SearchIcon } from '@/shared/assets'

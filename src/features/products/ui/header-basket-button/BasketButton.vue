@@ -1,9 +1,10 @@
 <template>
   <Button class="bg-default">
-    <Icon name="fill-basket-icon" />
+    <FillBasketIcon />
   </Button>
 </template>
 
 <script setup lang="ts">
-import { Button, Icon } from '@/shared/ui'
+import { Button } from '@/shared/ui'
+import { FillBasketIcon } from '@/shared/assets'
 </script>

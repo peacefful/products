@@ -1,9 +1,10 @@
 <template>
   <Button>
-    <Icon name="fill-favorite-icon" />
+    <FillFavoriteIcon />
   </Button>
 </template>
 
 <script setup lang="ts">
-import { Button, Icon } from '@/shared/ui'
+import { Button } from '@/shared/ui'
+import { FillFavoriteIcon } from '@/shared/assets'
 </script>
