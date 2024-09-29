@@ -1,7 +1,10 @@
 <template>
-  <div
-    class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mt-6 justify-items-center sm:justify-items-start"
-  >
+  <div v-if="productsStore.filteredProducts.length" class="product-list">
+    <div v-for="product in productsStore.filteredProducts" :key="product.id">
+      <ProductCard :product="product" />
+    </div>
+  </div>
+  <div v-else class="product-list">
     <div v-for="product in productsStore.displayedProducts" :key="product.id">
       <ProductCard :product="product" />
     </div>
@@ -26,3 +29,7 @@ if (!productsStore.allProducts.length) {
   })
 }
 </script>
+
+<style scoped lang="scss">
+@import url('./styles.modules.scss');
+</style>

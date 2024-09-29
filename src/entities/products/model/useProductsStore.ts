@@ -11,6 +11,7 @@ export const useProductsStore = defineStore('productsStore', {
     itemsPerLoad: 10,
     loadIndex: 0,
 
+    filteredProducts: [] as TProduct[],
     searchProduct: ''
   }),
   actions: {
@@ -26,7 +27,12 @@ export const useProductsStore = defineStore('productsStore', {
     },
     sortedData(sortedType: string | null) {
       if (sortedType) {
-        this.displayedProducts = quickSort(this.displayedProducts, sortedType as SortType)
+        if (this.filteredProducts.length) {
+          this.filteredProducts = quickSort(this.filteredProducts, sortedType as SortType)
+          return this.filteredProducts
+        } else {
+          this.displayedProducts = quickSort(this.displayedProducts, sortedType as SortType)
+        }
       }
       return this.displayedProducts
     },
@@ -39,8 +45,9 @@ export const useProductsStore = defineStore('productsStore', {
       if (searchValue.trim() === '') {
         this.loadIndex = 0
         this.displayedProducts = [...this.allProducts.slice(0, this.itemsPerLoad)]
+        this.filteredProducts = []
       } else {
-        this.displayedProducts = getResultProducts(searchData)
+        this.filteredProducts = getResultProducts(searchData)
       }
     }
   }
