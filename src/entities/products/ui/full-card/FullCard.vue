@@ -6,7 +6,7 @@
       <div
         class="w-full xl:w-[746px] h-[636px] flex justify-center items-center border border-baseSilver rounded-2xl"
       >
-        <img src="/public/images/full-card-phone.png" alt="not image" />
+        <img src="/public/full-card-phone.png" alt="not image" />
       </div>
       <div class="flex flex-col justify-between w-full xl:max-w-[526px] text-base leading-[22.4px]">
         <div>

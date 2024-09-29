@@ -17,7 +17,7 @@
       </div>
       <div class="flex flex-col items-center pt-24 md:pt-0">
         <div>
-          <img class="h-28 w-28" src="/public/images/basket-image.png" alt="not image" />
+          <img class="h-28 w-28" src="/public/basket-image.png" alt="not image" />
         </div>
         <strong class="text-[24px] font-bold pt-8"> Спасибо за заказ!</strong>
         <p class="text-base text-[#6A707C] mt-3">Уже собираем</p>

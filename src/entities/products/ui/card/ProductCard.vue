@@ -7,7 +7,7 @@
     <Button class="h-11 w-11 rounded-full bg-[#5454544D] absolute top-1 right-1">
       <Icon name="silver-favorite-icon" />
     </Button>
-    <img src="/public/images/card-phone.png" alt="no image" />
+    <img src="/public/card-phone.png" alt="no image" />
     <p class="mt-3 font-medium text-xs lg:text-sm">{{ product.title }}</p>
     <Rating :rated-count="product.ratesCount" :rating="product.rating" />
     <div class="flex items-center mt-6">
