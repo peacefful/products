@@ -1,0 +1,6 @@
+.category {
+  @apply flex flex-wrap gap-3 text-base;
+}
+.category-text {
+  @apply cursor-pointer text-default font-medium;
+}
