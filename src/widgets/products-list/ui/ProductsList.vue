@@ -1,11 +1,17 @@
 <template>
   <div v-if="productsStore.filteredProducts.length" class="product-list">
-    <div v-for="product in productsStore.filteredProducts" :key="product.id">
+    <div
+      v-for="(product, index) in productsStore.filteredProducts"
+      :key="`filtered-${product.id}-${index}`"
+    >
       <ProductCard :product="product" />
     </div>
   </div>
   <div v-else class="product-list">
-    <div v-for="product in productsStore.displayedProducts" :key="product.id">
+    <div
+      v-for="(product, index) in productsStore.displayedProducts"
+      :key="`displayed-${product.id}-${index}`"
+    >
       <ProductCard :product="product" />
     </div>
   </div>
