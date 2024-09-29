@@ -1,5 +1,5 @@
 <template>
-  <img :src="`/public/icons/${name}.svg`" alt="not image" />
+  <img :src="`/public/images/${name}.svg`" alt="not image" />
 </template>
 
 <script setup lang="ts">
