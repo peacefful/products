@@ -1,1 +1,1 @@
-export { default as SearchProducts } from './Search.vue'
+export { default as SearchProducts } from './SearchProducts.vue'

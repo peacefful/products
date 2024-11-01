@@ -29,7 +29,6 @@
 
 <script setup lang="ts">
 import { type TProductProps } from '@/entities/products'
-import { Icon } from '@/shared/ui'
 import { Button } from '@/shared/ui'
 import { Rating } from '@/entities/products'
 import { useRouter } from 'vue-router'

@@ -57,6 +57,7 @@ const { product } = defineProps<TProductProps>()
 const modalStore = useModalStore()
 
 const datas = computed(() => {
-  if (product) return handleProductsСharacteristic(product)
-})
+  if (product) return handleProductsСharacteristic(product);
+  return null;
+});
 </script>

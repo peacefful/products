@@ -6,9 +6,7 @@ export const useCheckHeightScreen = (callBack: () => void) => {
     const windowHeight = window.innerHeight
     const fullHeight = document.documentElement.scrollHeight
 
-    if (scrollTop + windowHeight >= fullHeight - 10) {
-      callBack()
-    }
+    if (scrollTop + windowHeight >= fullHeight - 10) callBack()
   }
 
   onMounted(() => {
