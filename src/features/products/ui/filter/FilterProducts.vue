@@ -6,26 +6,27 @@
     <div class="block sm:flex gap-8">
       <h2>Сортировать:</h2>
       <div class="block sm:flex gap-4">
-        <div
-          v-if="windowWidth > 1000"
-          class="text-[#6A707C]"
-          v-for="filter in filterList"
-          :key="filter.id"
-        >
-          <p
-            @click="selectValue(filter.value)"
-            :class="{ 'text-default': currentValue === filter.value }"
-            class="cursor-pointer"
+        <template v-if="windowWidth > 1000">
+          <div
+            class="text-[#6A707C]"
+            v-for="filter in filterList"
+            :key="filter.id"
           >
-            {{ filter.title }}
-          </p>
-          <div v-if="currentValue === filter.value" class="bg-default h-[2px] w-auto"></div>
-        </div>
-        <div v-else>
+            <p
+              @click="selectValue(filter.value)"
+              :class="{ 'text-default': currentValue === filter.value }"
+              class="cursor-pointer"
+            >
+              {{ filter.title }}
+            </p>
+            <div v-if="currentValue === filter.value" class="bg-default h-[2px] w-auto"></div>
+          </div>
+        </template>
+        <template v-else>
           <div class="w-full text-default opacity-100">
             {{ getCurrentTitleFilterFromValue?.title }}
           </div>
-        </div>
+        </template>
       </div>
     </div>
     <Button v-if="windowWidth < 1000">
