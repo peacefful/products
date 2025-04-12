@@ -1,5 +1,6 @@
 import { Products } from '@/pages/products'
 import { Product } from '@/pages/product'
+import { Favorites } from '@/pages/favorites'
 
 export const routes = [
   {
@@ -11,5 +12,10 @@ export const routes = [
     path: '/product/:id',
     name: 'product',
     component: Product
+  },
+  {
+    path: '/favorites',
+    name: 'favorites',
+    component: Favorites
   }
 ]

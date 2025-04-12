@@ -4,9 +4,7 @@
     class="border border-baseSilver rounded-2xl p-[24px] max-w-[306px] cursor-pointer relative"
     @click="router.push(`/product/${product.id}`)"
   >
-    <Button class="h-11 w-11 rounded-full bg-[#5454544D] absolute top-1 right-1">
-      <SilverFavoriteIcon />
-    </Button>
+    <slot />
     <img src="/public/card-phone.png" alt="no image" />
     <p class="mt-3 font-medium text-xs lg:text-sm">{{ product.title }}</p>
     <Rating :rated-count="product.ratesCount" :rating="product.rating" />
