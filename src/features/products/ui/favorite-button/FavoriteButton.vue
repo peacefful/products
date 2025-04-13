@@ -19,10 +19,6 @@ const props = defineProps<{
   id: string
 }>()
 
-const emit = defineEmits<{
-  (e: 'deleteProductById'): void
-}>()
-
 const isToggled = ref(isExistProduct(props.id, 'favoriteProducts'))
 
 const toggleFavorite = () => {
@@ -40,7 +36,5 @@ const toggleFavorite = () => {
   }
 
   isToggled.value = !isToggled.value
-
-  // emit('deleteProductById')
 }
 </script>

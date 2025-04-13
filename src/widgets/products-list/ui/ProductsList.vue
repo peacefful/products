@@ -12,10 +12,7 @@
         </template>
         <template #basketButton>
           <div @click.stop>
-            <BasketButton
-              :id="product.id"
-              @delete-product-from-basket="$emit('deleteProductById', product.id)"
-            />
+            <BasketButton :id="product.id" />
           </div>
         </template>
       </ProductCard>
@@ -31,10 +28,7 @@
         </template>
         <template #basketButton>
           <div @click.stop>
-            <BasketButton
-              :id="product.id"
-              @delete-product-from-basket="$emit('deleteProductById', product.id)"
-            />
+            <BasketButton :id="product.id" />
           </div>
         </template>
       </ProductCard>
@@ -53,10 +47,6 @@ import { computed } from 'vue'
 defineProps<{
   filteredProducts: TProduct[]
   displayedProducts?: TProduct[]
-}>()
-
-defineEmits<{
-  (e: 'deleteProductById', id: string): void
 }>()
 
 const route = useRoute()

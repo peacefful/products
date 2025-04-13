@@ -22,10 +22,6 @@ const props = defineProps<{
   id: string
 }>()
 
-const emit = defineEmits<{
-  (e: 'deleteProductFromBasket'): void
-}>()
-
 const isToggled = ref(isExistProduct(props.id, 'basketProducts'))
 
 const toggleBasket = () => {
@@ -43,7 +39,5 @@ const toggleBasket = () => {
   }
 
   isToggled.value = !isToggled.value
-
-  // emit('deleteProductFromBasket')
 }
 </script>
