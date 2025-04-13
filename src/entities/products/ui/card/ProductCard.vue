@@ -4,7 +4,7 @@
     class="border border-baseSilver rounded-2xl p-[24px] max-w-[306px] cursor-pointer relative"
     @click="router.push(`/product/${product.id}`)"
   >
-    <slot />
+    <slot name="favoriteButton" />
     <img src="/public/card-phone.png" alt="no image" />
     <p class="mt-3 font-medium text-xs lg:text-sm">{{ product.title }}</p>
     <Rating :rated-count="product.ratesCount" :rating="product.rating" />
@@ -18,19 +18,15 @@
       <p class="text-[#322F38] text-[20px] mt-3 lg:text-[32px] font-bold">
         {{ product.discountPrice }} ₸
       </p>
-      <Button class="h-11 bg-default mt-3 w-full lg:w-11 lg:mt-0">
-        <BasketIcon />
-      </Button>
+      <slot name="basketButton" />
     </section>
   </article>
 </template>
 
 <script setup lang="ts">
 import { type TProductProps } from '@/entities/products'
-import { Button } from '@/shared/ui'
 import { Rating } from '@/entities/products'
 import { useRouter } from 'vue-router'
-import { BasketIcon, SilverFavoriteIcon } from '@/shared/assets'
 
 const router = useRouter()
 

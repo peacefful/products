@@ -1,18 +1,21 @@
 <template>
   <Button
-    @click="toggleFavorite"
-    class="h-11 w-11 rounded-full bg-[#5454544D] absolute top-1 right-1"
+    @click="toggleBasket"
+    :class="{
+      'bg-green-400': isToggled
+    }"
+    class="h-11 bg-default mt-3 w-full lg:w-11 lg:mt-0"
   >
-    <SelectFavoriteIcon v-if="isToggled" />
-    <SilverFavoriteIcon v-else />
+    <SuccessIcon v-if="isToggled" />
+    <BasketIcon v-else />
   </Button>
 </template>
 
 <script setup lang="ts">
-import { SilverFavoriteIcon } from '@/shared/assets'
-import { SelectFavoriteIcon } from '@/shared/assets'
 import { Button } from '@/shared/ui'
+import { BasketIcon } from '@/shared/assets'
 import { isExistProduct } from '@/entities/products'
+import { SuccessIcon } from '@/shared/assets'
 import { ref } from 'vue'
 
 const props = defineProps<{
@@ -20,13 +23,13 @@ const props = defineProps<{
 }>()
 
 const emit = defineEmits<{
-  (e: 'deleteProductById'): void
+  (e: 'deleteProductFromBasket'): void
 }>()
 
-const isToggled = ref(isExistProduct(props.id, 'favoriteProducts'))
+const isToggled = ref(isExistProduct(props.id, 'basketProducts'))
 
-const toggleFavorite = () => {
-  const key = 'favoriteProducts'
+const toggleBasket = () => {
+  const key = 'basketProducts'
   const favoriteProducts: string[] = JSON.parse(localStorage.getItem(key) || '[]')
 
   const isFavorite = favoriteProducts.includes(props.id)
@@ -41,6 +44,6 @@ const toggleFavorite = () => {
 
   isToggled.value = !isToggled.value
 
-  // emit('deleteProductById')
+  // emit('deleteProductFromBasket')
 }
 </script>

@@ -7,7 +7,7 @@
       <SearchProducts class="lg:ml-44" />
       <div class="flex gap-6 ml-4 lg:mr-20">
         <HeaderFavoriteButton @click="router.push('/favorites')" class="w-7 h-7" />
-        <HeaderBasketButton class="w-7 h-7" />
+        <HeaderBasketButton @click="router.push('/basket')" class="w-7 h-7" />
       </div>
     </div>
   </header>

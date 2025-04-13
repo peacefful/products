@@ -1,4 +1,6 @@
-export const isFavoriteProduct = (id: string): boolean => {
-  const favoriteProducts: string[] = JSON.parse(localStorage.getItem('favoriteProducts') || '[]')
-  return favoriteProducts.includes(id)
+export const isExistProduct = (id: string, key: string): boolean => {
+  const keyLocalStorage = key
+
+  const products: string[] = JSON.parse(localStorage.getItem(keyLocalStorage) || '[]')
+  return products.includes(id)
 }
