@@ -14,27 +14,12 @@ import { SelectFavoriteIcon } from '@/shared/assets'
 import { Button } from '@/shared/ui'
 import { isExistProduct } from '@/entities/products'
 import { ref } from 'vue'
+import { useToggleButton } from '@/entities/products'
 
 const props = defineProps<{
   id: string
 }>()
 
-const isToggled = ref(isExistProduct(props.id, 'favoriteProducts'))
+const { isToggled, toggle: toggleFavorite } = useToggleButton(props.id, 'favoriteProducts')
 
-const toggleFavorite = () => {
-  const key = 'favoriteProducts'
-  const favoriteProducts: string[] = JSON.parse(localStorage.getItem(key) || '[]')
-
-  const isFavorite = favoriteProducts.includes(props.id)
-
-  if (isFavorite) {
-    const updated = favoriteProducts.filter((id) => id !== props.id)
-    localStorage.setItem(key, JSON.stringify(updated))
-  } else {
-    const updated = [...favoriteProducts, props.id]
-    localStorage.setItem(key, JSON.stringify(updated))
-  }
-
-  isToggled.value = !isToggled.value
-}
 </script>

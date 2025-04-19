@@ -32,8 +32,8 @@
             <p class="text-[#979797] line-through leading-none">{{ product.price }}₸</p>
           </div>
           <div class="mt-6 flex items-center gap-4">
-            <BuyButton @open-modal="modalStore.openModal" class="text-white w-full h-[59px]" />
-            <CardFavoriteButtonCard />
+            <BuyButton :id="product.id" class="text-white w-full h-[59px]" />
+            <CardFavoriteButtonCard :id="product.id" />
           </div>
           <SuccessModal />
         </div>
@@ -57,7 +57,7 @@ const { product } = defineProps<TProductProps>()
 const modalStore = useModalStore()
 
 const datas = computed(() => {
-  if (product) return handleProductsСharacteristic(product);
-  return null;
-});
+  if (product) return handleProductsСharacteristic(product)
+  return null
+})
 </script>
